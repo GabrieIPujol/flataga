@@ -126,14 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-document.querySelectorAll("img").forEach((img) => {
-  img.addEventListener("load", () => {
-    img.style.opacity = "1"
-  })
-  img.style.opacity = "0"
-  img.style.transition = "opacity 0.3s ease"
-})
-
 window.addEventListener("scroll", () => {
   const scrolled = window.pageYOffset
   const hero = document.querySelector(".hero-bg video")
