@@ -58,6 +58,13 @@ body {
   color: var(--primary-color);
 }
 
+.nav-logo-img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
 .nav-logo i {
   margin-right: 0.5rem;
   font-size: 1.8rem;
@@ -795,7 +802,7 @@ section {
 
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 75px;
     left: -100%;
     width: 100%;
     height: calc(100vh - 70px);
@@ -815,6 +822,7 @@ section {
 
   .nav-toggle {
     display: block;
+    padding-left: 10px;
   }
 
   .hero-title {
@@ -953,7 +961,41 @@ section {
   }
 }
 
+@media (max-width: 560px) {
+    .nav-menu {
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--white);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    transition: left 0.3s ease;
+    box-shadow: var(--shadow);
+  }
+}
+
 @media (max-width: 480px) {
+    .nav-menu {
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--white);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    transition: left 0.3s ease;
+    box-shadow: var(--shadow);
+  }
+
   .container {
     padding: 0 15px;
   }
