@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { gsap, Flip, useGSAP, MOTION } from "../lib/gsap"
+import { gsap, Flip, ScrollTrigger, useGSAP, MOTION } from "../lib/gsap"
 import { categories, portfolio, type Category } from "../content"
 import { Photo } from "../components/Photo"
 import { SectionLabel } from "../components/SectionLabel"
@@ -32,8 +32,14 @@ export function Portfolio() {
     () => {
       const state = flipState.current
       flipState.current = null
-      if (!state || !window.matchMedia(MOTION).matches) return
+      if (!state) return
+      // A altura da página muda com o filtro; ScrollTrigger não percebe sozinho.
+      if (!window.matchMedia(MOTION).matches) {
+        ScrollTrigger.refresh()
+        return
+      }
       Flip.from(state, {
+        onComplete: () => ScrollTrigger.refresh(),
         targets: ".portfolio-item",
         duration: 0.6,
         ease: "power3.inOut",

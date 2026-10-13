@@ -7,14 +7,25 @@ import { Icon } from "../components/Icon"
 export function Header() {
   const root = useRef<HTMLElement>(null)
   const menu = useRef<HTMLDivElement>(null)
+  const trigger = useRef<HTMLButtonElement>(null)
+  const closeBtn = useRef<HTMLButtonElement>(null)
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : ""
     if (!open) return
+    closeBtn.current?.focus()
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false)
+    // Menu some no desktop (lg:hidden); fecha para não deixar o scroll travado.
+    const desktop = window.matchMedia("(min-width: 1024px)")
+    const onWide = () => desktop.matches && setOpen(false)
     window.addEventListener("keydown", onKey)
-    return () => window.removeEventListener("keydown", onKey)
+    desktop.addEventListener("change", onWide)
+    return () => {
+      window.removeEventListener("keydown", onKey)
+      desktop.removeEventListener("change", onWide)
+      trigger.current?.focus({ preventScroll: true })
+    }
   }, [open])
 
   useGSAP(() => {
@@ -62,7 +73,7 @@ export function Header() {
           <a href="#contact" className="hidden rounded-full bg-brand-500 px-5 py-2 text-sm font-medium text-ink-950 transition hover:bg-brand-400 lg:inline-block">
             Solicitar orçamento
           </a>
-          <button type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="mobile-menu" aria-label="Abrir menu" className="text-white lg:hidden">
+          <button ref={trigger} type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="mobile-menu" aria-label="Abrir menu" className="text-white lg:hidden">
             <Icon name="menu" />
           </button>
         </nav>
@@ -70,7 +81,7 @@ export function Header() {
       {open && (
         <div ref={menu} id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" className="fixed inset-0 z-[60] flex flex-col bg-ink-950 px-4 py-4 lg:hidden">
           <div className="flex h-8 justify-end">
-            <button type="button" onClick={() => setOpen(false)} aria-label="Fechar menu" className="text-white">
+            <button ref={closeBtn} type="button" onClick={() => setOpen(false)} aria-label="Fechar menu" className="text-white">
               <Icon name="close" />
             </button>
           </div>
