@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-brand-50: #fef7e6;
+  --color-brand-100: #fdebc0;
+  --color-brand-200: #fbd889;
+  --color-brand-300: #f6bf4c;
+  --color-brand-400: #eea41f;
+  --color-brand-500: #d98a04;
+  --color-brand-600: #b56c03;
+  --color-brand-700: #8f5207;
+  --color-brand-800: #6f400b;
+  --color-brand-900: #5a350d;
+  --color-brand-950: #331c04;
+
+  --color-wood-50: #faf4ec;
+  --color-wood-100: #f1e2cc;
+  --color-wood-200: #e2c398;
+  --color-wood-300: #cf9e5e;
+  --color-wood-400: #b97c35;
+  --color-wood-500: #a1631d;
+  --color-wood-600: #844a0a;
+  --color-wood-700: #6b3c0b;
+  --color-wood-800: #57310d;
+  --color-wood-900: #48290e;
+  --color-wood-950: #2a1605;
+
+  --color-ink-700: #33281c;
+  --color-ink-800: #221a12;
+  --color-ink-900: #17110b;
+  --color-ink-950: #0e0a06;
+
+  --color-paper: #f6f1e9;
+}
+
+@utility bg-blueprint {
+  background-image:
+    linear-gradient(to right, rgb(217 138 4 / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(217 138 4 / 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 4rem;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    background: var(--color-ink-950);
+    color: white;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
