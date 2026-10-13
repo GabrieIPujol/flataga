@@ -55,7 +55,7 @@ export function Footer() {
         </div>
       </div>
       <div className="mt-16 overflow-hidden">
-        <p aria-hidden="true" className="footer-word text-center font-display text-[22vw] font-bold leading-[0.8] tracking-tighter text-brand-500">
+        <p aria-hidden="true" className="footer-word text-center font-display text-[22vw] font-bold leading-[0.8] tracking-tight text-brand-500">
           FLATAGA
         </p>
       </div>
