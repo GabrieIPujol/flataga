@@ -24,10 +24,9 @@ export const about = {
     "Com anos de experiência no mercado, a Flataga Serviços nasceu do sonho de transformar projetos em realidade. Começamos como uma pequena empresa familiar e hoje somos referência em construção e reforma na região.",
 }
 
-// PROVISÓRIO: números a confirmar com o cliente antes do merge na main.
 export const stats = [
-  { value: 10, suffix: "+", label: "anos de experiência" },
-  { value: 300, suffix: "+", label: "obras entregues" },
+  { value: 5, suffix: "+", label: "anos de experiência" },
+  { value: 50, suffix: "+", label: "obras entregues" },
   { value: 100, suffix: "%", label: "compromisso com prazos" },
 ]
 
