@@ -9,6 +9,8 @@ import { About } from "./sections/About"
 import { Services } from "./sections/Services"
 import { Portfolio } from "./sections/Portfolio"
 import { Testimonials } from "./sections/Testimonials"
+import { Contact } from "./sections/Contact"
+import { Footer } from "./sections/Footer"
 
 export default function App() {
   // Fontes mudam alturas; recalcula posições de pin/scroll depois que carregam.
@@ -25,7 +27,9 @@ export default function App() {
         <Services />
         <Portfolio />
         <Testimonials />
+        <Contact />
       </main>
+      <Footer />
       <a
         href={whatsappUrl(contact.whatsapp)}
         target="_blank"
