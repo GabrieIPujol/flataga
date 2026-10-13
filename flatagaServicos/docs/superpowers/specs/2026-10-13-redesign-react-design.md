@@ -87,8 +87,17 @@ são removidos ou movidos para `public/`; a versão antiga fica na `main`.
 
 Campos: nome, telefone, serviço (select com a lista de `content.ts`), mensagem.
 Validação nativa (`required`, `type="tel"`). Ao enviar: monta texto
-`Olá! Sou {nome} ({telefone}). Tenho interesse em {serviço}: {mensagem}` e abre o
-WhatsApp em nova aba. Sem backend.
+`Olá! Sou {nome}, telefone {telefone}. Tenho interesse em {serviço}: {mensagem}` e abre o
+WhatsApp em nova aba. Campos só com espaços são recusados com mensagem. Sem backend.
+
+## Deploy
+
+Hoje o site é servido pelo GitHub Pages direto da `main` em
+`https://gabrieipujol.github.io/flataga/flatagaServicos/` (repo `flataga`, site na
+subpasta `flatagaServicos/`). Com Vite é preciso build: um workflow GitHub Actions
+(`.github/workflows/deploy.yml` na raiz do repo) builda com
+`base: "/flataga/flatagaServicos/"` e publica preservando a mesma URL. Requer trocar
+em Settings → Pages a origem para **GitHub Actions** (ação manual do dono do repo).
 
 ## Conteúdo
 
