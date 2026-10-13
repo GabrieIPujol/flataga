@@ -94,7 +94,7 @@ WhatsApp em nova aba. Sem backend.
 
 - Reaproveita textos atuais; cliente enviará conteúdo novo depois.
 - Placeholders de imagem com proporção final (ex.: portfólio 4:3) até chegarem as fotos.
-- Pendente: confirmar se o serviço "Filiação" é "Fundação".
+- Nomes dos serviços mantidos exatamente como hoje (inclusive "Filiação").
 
 ## Verificação
 
