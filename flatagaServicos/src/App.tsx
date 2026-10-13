@@ -6,6 +6,7 @@ import { Icon } from "./components/Icon"
 import { Header } from "./sections/Header"
 import { Hero } from "./sections/Hero"
 import { About } from "./sections/About"
+import { Services } from "./sections/Services"
 
 export default function App() {
   // Fontes mudam alturas; recalcula posições de pin/scroll depois que carregam.
@@ -19,6 +20,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Services />
       </main>
       <a
         href={whatsappUrl(contact.whatsapp)}
